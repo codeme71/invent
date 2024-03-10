@@ -1,5 +1,5 @@
 // codeme71 2024 
-// please donate in SOL:GTwdPrZbEY7AMFSabUwb2tH7SZJjoq2yrkud5GomB67C
+// please donate in SOL: EuRyXtxFq2NSwCRFxjgGRzYWN1xv72FGKSUF3TvVy6yu
 #include <stdio.h>
 #include <stdlib.h>
 
