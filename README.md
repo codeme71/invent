@@ -1,4 +1,8 @@
 # invent
+
 summary numeric string without separate
-ggc invent.c -o invent -static
+
+build: ggc invent.c -o invent -static
+
+usage: invent < numeric string >
 
