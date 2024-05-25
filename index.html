@@ -1,0 +1,46 @@
+// codeme71 2024 
+// please donate in SOL: EuRyXtxFq2NSwCRFxjgGRzYWN1xv72FGKSUF3TvVy6yu
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Простая веб-страница взаимодействия с программой</title>
+</head>
+<body>
+
+<h1>Ввод числа</h1>
+
+<form action="/process.py" method="post">
+  <label for="number">Введите число:</label>
+  <input type="text" id="number" name="number" required><br><br>
+  <input type="submit" value="Отправить">
+</form>
+
+<h2>Результат:</h2>
+<p id="output"></p>
+
+<script>
+  // Функция для получения ответа от сервера
+  function getOutput(response) {
+    document.getElementById("output").innerHTML = response;
+  }
+
+  // Отправка формы без перезагрузки страницы
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Отменяем стандартную отправку
+
+    const formData = new FormData(form);
+
+    fetch('/process.py', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(getOutput)
+    .catch(error => console.error('Error:', error));
+  });
+</script>
+
+</body>
+</html>
